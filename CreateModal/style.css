@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    --primary-color :#e26e70;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( 
+     45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100% );
+}
+.btn{
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+}
+#open-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 17px 35px;
+    font-size: 20px;
+    color: black;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: 0.25s ;
+    z-index: 2;
+}
+#open-btn:hover{
+    background-color: #ddd;
+}
+
+.content{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .content-inner{
+    width: 500px;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.25s;
+    margin-top: -200px;
+}
+.content.active{
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+}
+.content .content-inner.active{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
+}
+.content .content-inner .header{
+    padding: 5px 15px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--primary-color) ;
+}
+.content .content-inner .header #cancel-btn{
+    color: #fff;
+    padding: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 400;
+}
+.content .content-inner .content-section{
+    background-color: #fff;
+    padding: 15px;
+    color: #000;
+    border-radius: 0 0 10px 10px;
+}
+.content .content-inner .content-section h1{
+    color: var(--primary-color);
+    font-size: 25px;
+    font-weight: bold;
+}
+.content .content-inner .content-section p{
+    margin: 5px 0;
+}
+.content .content-inner .content-section #close-btn{
+    padding: 8px 22px;
+    border-radius: 7px;
+    color: #fff;
+    background-color: var(--primary-color);
+    margin-top: 30px;
+    margin-left: auto;
+}
