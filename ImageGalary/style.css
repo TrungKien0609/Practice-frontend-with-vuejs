@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    --primary-color :#e26e70;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-images{
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.list-images .image{
+    width: 23%;
+    height: 200px;
+    margin: 11px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.list-images .image img{
+    transition: 0.25s;
+}
+.list-images .image img:hover{
+    transform: scale(1.1);
+}
+.list-full-image{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8) ;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: 0.25s ease-out;
+    transform: scale(0.8);
+}
+.list-full-image.active{
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: scale(1);
+}
+.list-full-image .list-container{
+    width: 70%;
+    height: 450px;
+    overflow: hidden;
+}
+/* cho nay */
+.list-full-image .list-container .list-slide{
+    height: 100%;
+    display: flex;
+    transition: 0.5s ease-out;
+}
+.list-full-image .image{
+    display: inline;
+}
+.list-full-image .image img{
+    width: 70vw;
+    margin: 0 auto;
+}
+.list-full-image button{
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.list-full-image .btn-times{
+    top: 10px ;
+    right: 20px;
+}
+.list-full-image .btn-next{
+    right: 20px;
+    font-size: 50px;
+    color: #ccc;
+}
+.list-full-image .btn-pre{
+    left: 20px;
+    font-size: 50px;
+    color: #ccc;
+}
